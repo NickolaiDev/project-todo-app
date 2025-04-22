@@ -1,0 +1,166 @@
+body {
+    padding: 20px;
+    display: block;
+    background-color: whitesmoke;
+    font-family: orbitron;
+}
+
+.gridColumn {
+    display: grid;
+    grid-template-rows: 100px 200px auto;
+    grid-template-areas: 
+        "header header"
+        "left   right"
+        ".   right";
+    gap: 10px;
+}
+
+.box {
+    box-shadow: 2px 2px 5px 0px #000;
+}   
+
+.header {
+    grid-area: header;
+    align-content: center;
+    text-align: center;
+    border-radius: 25px;
+    background-color: black;
+    color: whitesmoke;
+}
+
+.leftSide {
+    grid-area: left;
+    background-color: black;
+    border-radius: 25px;
+    color: whitesmoke;
+}
+
+.rightSide {
+    grid-area: right;
+    background-color: black;
+    border-radius: 25px;
+    color: whitesmoke;
+}
+
+@media (max-width: 500px) {
+    .gridColumn {
+        display: grid;
+        grid-template-rows: 1fr 2fr 2fr;
+        grid-template-areas: 
+            "header"
+            "left"
+            "right";
+        gap: 10px;
+    }
+}
+
+.taskBox {
+    text-align: center;
+}
+
+#taskInput {
+    display: block;
+    justify-self: center;
+    margin-top: 5px
+}
+
+#taskSubmit {
+    margin: 10px;
+}
+
+.taskHeader {
+    text-align: center;
+}
+
+.completed {
+    color: gray;
+    text-decoration: line-through;
+}
+
+ul {
+    list-style-type: none;
+    padding: 5px;
+}
+
+li {
+    padding: 10px;
+    border-top: 1px solid rgb(255, 255, 255);
+    background-color: rgb(32, 32, 32);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.2s linear;
+    font-family: sans-serif;
+}
+
+li:hover {
+    scale: 1.03;
+}
+
+li:nth-child(even) {
+    background-color: rgb(12, 12, 12);
+}
+
+li:last-child {
+    border-bottom: 1px solid gray;
+}
+
+.removeButton {
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 5px;
+    border: 1px solid whitesmoke;
+    color: whitesmoke;
+    transition: all 0.2s ease-out;
+}
+
+.removeButton:hover {
+    background-color: aqua;
+    box-shadow: 2px 2px 2px 0 rgb(0, 0, 0);
+    color: #000;
+}
+
+textarea {
+    border-radius: 4px;
+    width: 200px;
+}
+
+#taskSubmit {
+    font-family: Rajdhani;
+    font-weight: 600;
+    background-color: whitesmoke;
+    border: 1px solid whitesmoke;
+    border-radius: 5px;
+    width: 75px;
+    height: 25px;
+    transition: all 0.2s linear;
+}
+
+#taskSubmit:hover {
+    background-color: rgb(199, 199, 199);
+    border: 1px solid rgb(199, 199, 199);
+    transform: translateY(-3px) translateX(-3px);
+    box-shadow: 3px 3px 2px 0 rgb(218, 218, 218);
+}
+
+.emptyList {
+    justify-self: center;
+    text-decoration: underline;
+}
+
+.drag-over {
+    outline: 2px dashed #00acc1;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(-10px);
+    animation: fadeIn 0.3s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

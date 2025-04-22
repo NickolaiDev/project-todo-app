@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="us">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>To-Do-List</title>
+        <link rel="stylesheet" href="./style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="gridColumn">
+            <div class="box header">
+                <h1>To-Do-List</h1>
+            </div>
+            <div class="box leftSide">
+                <div class="taskBox">
+                    <h3>What you need to do?</h3>
+                    <form id="taskForm" name="taskForm" formmethod="post">
+                        <label>Type your task:</label>
+                        <textarea 
+                            id="taskInput" 
+                            name="taskInput" 
+                            rows="4" 
+                            placeholder="I need to do..."
+                            required
+                        ></textarea>
+                        <input type="submit" id="taskSubmit" name="taskSubmit" />
+                    </form>
+                </div>
+            </div>
+            <div class="box rightSide">
+                <h3 class="taskHeader">Task List</h3>
+                <div class="taskList">
+                    <ul id="taskList"></ul>
+                </div>
+            </div>
+        </div>
+        <script src="./script.js"></script>
+    </body>
+</html>
